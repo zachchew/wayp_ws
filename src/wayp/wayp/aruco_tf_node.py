@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 # IP webcam rtsp capture with reduced latency
 # aruco marker pose estimation
 # publishes tf for each detected marker
@@ -20,7 +20,7 @@ ARUCO_DICT = {
 }
 aruco_dictionary_name = "DICT_5X5_50"
 aruco_marker_side_length = 0.105
-RTSP_STREAM = "https://192.168.1.93:8080/video"  # Changed from https to rtsp
+RTSP_STREAM = "https://10.120.83.146:8080/video"  # Changed from https to rtsp
 
 class ArucoTFPublisher(Node):
     def __init__(self):
@@ -54,7 +54,7 @@ class ArucoTFPublisher(Node):
         self.timer = self.create_timer(0.2, self.timer_callback)  # ~5 FPS
 
     def init_video_capture(self):
-        """Initialize video capture with FFMPEG backend and minimal buffering"""
+        # Initialize video capture with FFMPEG backend and minimal buffering
         self.get_logger().info(f"Connecting to RTSP stream: {RTSP_STREAM}")
         self.cap = cv2.VideoCapture(RTSP_STREAM, cv2.CAP_FFMPEG)
         self.cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
@@ -68,7 +68,7 @@ class ArucoTFPublisher(Node):
         return True
 
     def get_latest_frame(self):
-        """Get the latest frame by flushing the buffer"""
+        #Get the latest frame by flushing the buffer
         if not self.cap.isOpened():
             if not self.init_video_capture():
                 return False, None
@@ -202,7 +202,7 @@ class ArucoTFPublisher(Node):
         self.get_logger().info(f"Total processing time: {total_time:.2f} ms")
 
     def rotation_matrix_to_quaternion(self, rotation_matrix):
-        """Convert a rotation matrix to quaternion."""
+        # Convert a rotation matrix to quaternion.
         try:
             from scipy.spatial.transform import Rotation as R
             r = R.from_matrix(rotation_matrix)

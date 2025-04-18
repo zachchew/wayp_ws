@@ -4,7 +4,7 @@
   <version>0.0.1</version>
   <description>Publishes ArUco TFs and drone localisation using transforms.</description>
 
-  <maintainer email="zachary-chew@example.com">Zachary Chew</maintainer>
+  <maintainer email="zac.chew.l@gmail.com">Zachary Chew</maintainer>
   <license>MIT</license>
 
   <!-- Build system -->
@@ -19,11 +19,15 @@
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>
   <exec_depend>cv_bridge</exec_depend>
-  <exec_depend>opencv-python</exec_depend>
-  <exec_depend>numpy</exec_depend>
+  <exec_depend>python3-opencv-contrib</exec_depend>
+  <exec_depend>python3-matplotlib</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
   <exec_depend>scipy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>cv2</exec_depend>
+  <exec_depend>python3-mavsdk</exec_depend>
+  <exec_depend>asyncio</exec_depend>
+
 
   <export>
     <build_type>ament_python</build_type>

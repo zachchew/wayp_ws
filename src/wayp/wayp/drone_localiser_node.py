@@ -104,7 +104,7 @@ class DroneLocaliser(Node):
 
             self.get_logger().info(f"[POSE] Drone in world using {chosen_marker_id}:")
             self.get_logger().info(f"Position: x={translation[0]:.3f}, y={translation[1]:.3f}, z={translation[2]:.3f}")
-            self.get_logger().info(f"Orientation (FRD): qw={quaternion[0]:.3f}, qx={quaternion[1]:.3f}, qy={quaternion[2]:.3f}, qz={quaternion[3]:.3f}")
+            # self.get_logger().info(f"Orientation (FRD): qw={quaternion[0]:.3f}, qx={quaternion[1]:.3f}, qy={quaternion[2]:.3f}, qz={quaternion[3]:.3f}")
 
         except Exception as e:
             self.get_logger().warn(f"[WARN] Could not compute transform: {e}")

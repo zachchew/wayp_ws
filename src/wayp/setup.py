@@ -7,7 +7,7 @@ package_name = 'wayp'
 setup(
     name=package_name,
     version='0.0.1',
-    packages=[package_name],
+    packages=[package_name, f'{package_name}.utils'],
     data_files=[
         ('share/' + package_name, ['package.xml']),
         ('share/ament_index/resource_index/packages', ['resource/' + package_name]),
@@ -27,10 +27,15 @@ setup(
             'marker_tf_node = wayp.marker_tf_node:main',
             'drone_localiser_node = wayp.drone_localiser_node:main',
             'aruco_pose_estimator_node = wayp.aruco_pose_estimator_node:main',
-            'aruco_tf_node_copy = wayp.aruco_tf_node_copy:main',
+            'drone_control_node = wayp.drone_control_node:main',
+            'aruco_tf_node_gz = wayp.aruco_tf_node_gz:main',
+            'gazebo_control_node = wayp.gazebo_control_node:main',
+            'pose_consistency_analyser = wayp.pose_consistency_analyser:main',
+            'aruco_detection_analyser = wayp.aruco_detection_analyser:main',
         ],
     },
 )
+
 
 
 """
